@@ -1,0 +1,12 @@
+name: feature_clean_architecture
+description: 클린 아키텍처 feature 생성 템플릿
+
+version: 0.1.0+1
+
+environment:
+  mason: ^0.1.1
+
+vars:
+  feature_name:
+    type: string
+    description: Feature name
