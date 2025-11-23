@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'post_state.dart';
+part of 'posts_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'post_state.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$PostState {
+mixin _$PostsState {
 
 
 
@@ -20,7 +20,7 @@ mixin _$PostState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostsState);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PostState()';
+  return 'PostsState()';
 }
 
 
 }
 
 /// @nodoc
-class $PostStateCopyWith<$Res>  {
-$PostStateCopyWith(PostState _, $Res Function(PostState) __);
+class $PostsStateCopyWith<$Res>  {
+$PostsStateCopyWith(PostsState _, $Res Function(PostsState) __);
 }
 
 
-/// Adds pattern-matching-related methods to [PostState].
-extension PostStatePatterns on PostState {
+/// Adds pattern-matching-related methods to [PostsState].
+extension PostsStatePatterns on PostsState {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -186,7 +186,7 @@ return error(_that.message);case _:
 /// @nodoc
 
 
-class _Loading implements PostState {
+class _Loading implements PostsState {
   const _Loading();
   
 
@@ -206,7 +206,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PostState.loading()';
+  return 'PostsState.loading()';
 }
 
 
@@ -218,7 +218,7 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements PostState {
+class _Loaded implements PostsState {
   const _Loaded(final  List<PostModel> posts): _posts = posts;
   
 
@@ -230,7 +230,7 @@ class _Loaded implements PostState {
 }
 
 
-/// Create a copy of PostState
+/// Create a copy of PostsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -249,14 +249,14 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'PostState.loaded(posts: $posts)';
+  return 'PostsState.loaded(posts: $posts)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$LoadedCopyWith<$Res> implements $PostStateCopyWith<$Res> {
+abstract mixin class _$LoadedCopyWith<$Res> implements $PostsStateCopyWith<$Res> {
   factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) _then) = __$LoadedCopyWithImpl;
 @useResult
 $Res call({
@@ -275,7 +275,7 @@ class __$LoadedCopyWithImpl<$Res>
   final _Loaded _self;
   final $Res Function(_Loaded) _then;
 
-/// Create a copy of PostState
+/// Create a copy of PostsState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? posts = null,}) {
   return _then(_Loaded(
@@ -290,13 +290,13 @@ as List<PostModel>,
 /// @nodoc
 
 
-class _Error implements PostState {
+class _Error implements PostsState {
   const _Error(this.message);
   
 
  final  String message;
 
-/// Create a copy of PostState
+/// Create a copy of PostsState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -315,14 +315,14 @@ int get hashCode => Object.hash(runtimeType,message);
 
 @override
 String toString() {
-  return 'PostState.error(message: $message)';
+  return 'PostsState.error(message: $message)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ErrorCopyWith<$Res> implements $PostStateCopyWith<$Res> {
+abstract mixin class _$ErrorCopyWith<$Res> implements $PostsStateCopyWith<$Res> {
   factory _$ErrorCopyWith(_Error value, $Res Function(_Error) _then) = __$ErrorCopyWithImpl;
 @useResult
 $Res call({
@@ -341,7 +341,7 @@ class __$ErrorCopyWithImpl<$Res>
   final _Error _self;
   final $Res Function(_Error) _then;
 
-/// Create a copy of PostState
+/// Create a copy of PostsState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(_Error(

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:networking_example/features/post/presentation/pages/post_detail_page.dart';
-import 'package:networking_example/features/post/presentation/providers/post_notifier.dart';
-import 'package:networking_example/features/post/presentation/providers/states/post_state.dart';
+import 'package:networking_example/features/post/presentation/providers/posts_notifier.dart';
+import 'package:networking_example/features/post/presentation/providers/states/posts_state.dart';
 
-class PostPage extends ConsumerWidget {
-  const PostPage({super.key});
+class PostsPage extends ConsumerWidget {
+  const PostsPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(postProvider);
+    final state = ref.watch(postsProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Posts'),

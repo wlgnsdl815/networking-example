@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:networking_example/features/post/presentation/pages/post_page.dart';
+import 'package:networking_example/features/post/presentation/pages/posts_page.dart';
 
 void main() {
-  runApp(ProviderScope(child: const NetworkingExampleApp()));
+  runApp(const ProviderScope(child: NetworkingExampleApp()));
 }
 
 class NetworkingExampleApp extends StatelessWidget {
@@ -11,8 +11,6 @@ class NetworkingExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: PostPage(),
-    );
+    return const MaterialApp(home: PostsPage());
   }
 }
