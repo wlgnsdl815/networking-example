@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'post_state.dart';
+part of 'post_detail_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'post_state.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$PostState {
+mixin _$PostDetailState {
 
 
 
@@ -20,7 +20,7 @@ mixin _$PostState {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostState);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDetailState);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PostState()';
+  return 'PostDetailState()';
 }
 
 
 }
 
 /// @nodoc
-class $PostStateCopyWith<$Res>  {
-$PostStateCopyWith(PostState _, $Res Function(PostState) __);
+class $PostDetailStateCopyWith<$Res>  {
+$PostDetailStateCopyWith(PostDetailState _, $Res Function(PostDetailState) __);
 }
 
 
-/// Adds pattern-matching-related methods to [PostState].
-extension PostStatePatterns on PostState {
+/// Adds pattern-matching-related methods to [PostDetailState].
+extension PostDetailStatePatterns on PostDetailState {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -125,11 +125,11 @@ return error(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loading,TResult Function( List<PostModel> posts)?  loaded,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  loading,TResult Function( PostModel post)?  loaded,TResult Function( String message)?  error,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Loading() when loading != null:
 return loading();case _Loaded() when loaded != null:
-return loaded(_that.posts);case _Error() when error != null:
+return loaded(_that.post);case _Error() when error != null:
 return error(_that.message);case _:
   return orElse();
 
@@ -148,11 +148,11 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loading,required TResult Function( List<PostModel> posts)  loaded,required TResult Function( String message)  error,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  loading,required TResult Function( PostModel post)  loaded,required TResult Function( String message)  error,}) {final _that = this;
 switch (_that) {
 case _Loading():
 return loading();case _Loaded():
-return loaded(_that.posts);case _Error():
+return loaded(_that.post);case _Error():
 return error(_that.message);case _:
   throw StateError('Unexpected subclass');
 
@@ -170,11 +170,11 @@ return error(_that.message);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loading,TResult? Function( List<PostModel> posts)?  loaded,TResult? Function( String message)?  error,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  loading,TResult? Function( PostModel post)?  loaded,TResult? Function( String message)?  error,}) {final _that = this;
 switch (_that) {
 case _Loading() when loading != null:
 return loading();case _Loaded() when loaded != null:
-return loaded(_that.posts);case _Error() when error != null:
+return loaded(_that.post);case _Error() when error != null:
 return error(_that.message);case _:
   return null;
 
@@ -186,7 +186,7 @@ return error(_that.message);case _:
 /// @nodoc
 
 
-class _Loading implements PostState {
+class _Loading implements PostDetailState {
   const _Loading();
   
 
@@ -206,7 +206,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'PostState.loading()';
+  return 'PostDetailState.loading()';
 }
 
 
@@ -218,19 +218,13 @@ String toString() {
 /// @nodoc
 
 
-class _Loaded implements PostState {
-  const _Loaded(final  List<PostModel> posts): _posts = posts;
+class _Loaded implements PostDetailState {
+  const _Loaded(this.post);
   
 
- final  List<PostModel> _posts;
- List<PostModel> get posts {
-  if (_posts is EqualUnmodifiableListView) return _posts;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_posts);
-}
+ final  PostModel post;
 
-
-/// Create a copy of PostState
+/// Create a copy of PostDetailState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -240,31 +234,31 @@ _$LoadedCopyWith<_Loaded> get copyWith => __$LoadedCopyWithImpl<_Loaded>(this, _
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded&&const DeepCollectionEquality().equals(other._posts, _posts));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Loaded&&(identical(other.post, post) || other.post == post));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(_posts));
+int get hashCode => Object.hash(runtimeType,post);
 
 @override
 String toString() {
-  return 'PostState.loaded(posts: $posts)';
+  return 'PostDetailState.loaded(post: $post)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$LoadedCopyWith<$Res> implements $PostStateCopyWith<$Res> {
+abstract mixin class _$LoadedCopyWith<$Res> implements $PostDetailStateCopyWith<$Res> {
   factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) _then) = __$LoadedCopyWithImpl;
 @useResult
 $Res call({
- List<PostModel> posts
+ PostModel post
 });
 
 
-
+$PostModelCopyWith<$Res> get post;
 
 }
 /// @nodoc
@@ -275,28 +269,37 @@ class __$LoadedCopyWithImpl<$Res>
   final _Loaded _self;
   final $Res Function(_Loaded) _then;
 
-/// Create a copy of PostState
+/// Create a copy of PostDetailState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? posts = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? post = null,}) {
   return _then(_Loaded(
-null == posts ? _self._posts : posts // ignore: cast_nullable_to_non_nullable
-as List<PostModel>,
+null == post ? _self.post : post // ignore: cast_nullable_to_non_nullable
+as PostModel,
   ));
 }
 
-
+/// Create a copy of PostDetailState
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PostModelCopyWith<$Res> get post {
+  
+  return $PostModelCopyWith<$Res>(_self.post, (value) {
+    return _then(_self.copyWith(post: value));
+  });
+}
 }
 
 /// @nodoc
 
 
-class _Error implements PostState {
+class _Error implements PostDetailState {
   const _Error(this.message);
   
 
  final  String message;
 
-/// Create a copy of PostState
+/// Create a copy of PostDetailState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -315,14 +318,14 @@ int get hashCode => Object.hash(runtimeType,message);
 
 @override
 String toString() {
-  return 'PostState.error(message: $message)';
+  return 'PostDetailState.error(message: $message)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$ErrorCopyWith<$Res> implements $PostStateCopyWith<$Res> {
+abstract mixin class _$ErrorCopyWith<$Res> implements $PostDetailStateCopyWith<$Res> {
   factory _$ErrorCopyWith(_Error value, $Res Function(_Error) _then) = __$ErrorCopyWithImpl;
 @useResult
 $Res call({
@@ -341,7 +344,7 @@ class __$ErrorCopyWithImpl<$Res>
   final _Error _self;
   final $Res Function(_Error) _then;
 
-/// Create a copy of PostState
+/// Create a copy of PostDetailState
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
   return _then(_Error(

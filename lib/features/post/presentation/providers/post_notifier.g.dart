@@ -41,7 +41,7 @@ final class PostNotifierProvider
   }
 }
 
-String _$postNotifierHash() => r'04d6a628c7e211fbe9b8eaf77344bbf3c0ea8223';
+String _$postNotifierHash() => r'bd75728be1d7ab033959d803db47d534eac70c0f';
 
 abstract class _$PostNotifier extends $Notifier<PostState> {
   PostState build();

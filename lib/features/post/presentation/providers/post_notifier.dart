@@ -4,7 +4,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:networking_example/core/app_exception.dart';
 import 'package:networking_example/features/post/data/models/post_model.dart';
 import 'package:networking_example/features/post/domain/use_cases/get_posts.dart';
-import 'package:networking_example/features/post/domain/use_cases/get_post_detail.dart';
 import 'package:networking_example/features/post/domain/use_cases/get_posts_by_user_id.dart';
 import 'package:networking_example/features/post/presentation/providers/events/post_event.dart';
 import 'package:networking_example/features/post/presentation/providers/states/post_state.dart';
@@ -17,17 +16,15 @@ class PostNotifier extends _$PostNotifier {
   @override
   PostState build() {
     _onFetchPosts();
-    return const PostState.initial();
+    return const PostState.loading();
   }
 
   GetPosts get _getPosts => ref.read(getPostsProvider);
-  GetPostDetail get _getPostDetail => ref.read(getPostDetailProvider);
   GetPostsByUserId get _getPostsByUserId => ref.read(getPostsByUserIdProvider);
 
   Future<void> onEvent(PostEvent event) {
     return event.when(
       fetchPosts: _onFetchPosts,
-      fetchPostDetail: _onFetchPostDetail,
       fetchPostsByUserId: _onFetchPostsByUserId,
     );
   }
@@ -40,17 +37,6 @@ class PostNotifier extends _$PostNotifier {
     state = result.fold(
       (error) => PostState.error(error.message),
       (posts) => PostState.loaded(posts),
-    );
-  }
-
-  Future<void> _onFetchPostDetail(int id) async {
-    state = const PostState.loading();
-
-    final result = await _getPostDetail(id);
-
-    state = result.fold(
-      (error) => PostState.error(error.message),
-      (post) => PostState.detailLoaded(post),
     );
   }
 

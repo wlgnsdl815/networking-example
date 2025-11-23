@@ -5,6 +5,5 @@ part 'post_event.freezed.dart';
 @freezed
 class PostEvent with _$PostEvent {
   const factory PostEvent.fetchPosts() = _FetchPosts;
-  const factory PostEvent.fetchPostDetail(int id) = _FetchPostDetail;
   const factory PostEvent.fetchPostsByUserId(int userId) = _FetchPostsByUserId;
 }

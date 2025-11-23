@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:networking_example/features/post/presentation/pages/post_detail_page.dart';
 import 'package:networking_example/features/post/presentation/providers/post_notifier.dart';
 import 'package:networking_example/features/post/presentation/providers/states/post_state.dart';
 
@@ -15,19 +16,24 @@ class PostPage extends ConsumerWidget {
       ),
 
       body: state.when(
-        initial: () => const Center(child: CircularProgressIndicator()),
         loading: () => const Center(child: CircularProgressIndicator()),
         loaded: (posts) => ListView.separated(
           itemBuilder: (_, i) => ListTile(
             title: Text(posts[i].title),
             subtitle: Text(posts[i].body),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => PostDetailPage(postId: posts[i].id),
+                ),
+              );
+            },
           ),
           separatorBuilder: (_, _) => const SizedBox(height: 10),
           itemCount: posts.length,
         ),
-        detailLoaded: (post) => Center(
-          child: Text(post.title),
-        ),
+
         error: (msg) => Center(child: Text(msg)),
       ),
     );

@@ -55,12 +55,11 @@ extension PostEventPatterns on PostEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _FetchPosts value)?  fetchPosts,TResult Function( _FetchPostDetail value)?  fetchPostDetail,TResult Function( _FetchPostsByUserId value)?  fetchPostsByUserId,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _FetchPosts value)?  fetchPosts,TResult Function( _FetchPostsByUserId value)?  fetchPostsByUserId,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _FetchPosts() when fetchPosts != null:
-return fetchPosts(_that);case _FetchPostDetail() when fetchPostDetail != null:
-return fetchPostDetail(_that);case _FetchPostsByUserId() when fetchPostsByUserId != null:
+return fetchPosts(_that);case _FetchPostsByUserId() when fetchPostsByUserId != null:
 return fetchPostsByUserId(_that);case _:
   return orElse();
 
@@ -79,12 +78,11 @@ return fetchPostsByUserId(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _FetchPosts value)  fetchPosts,required TResult Function( _FetchPostDetail value)  fetchPostDetail,required TResult Function( _FetchPostsByUserId value)  fetchPostsByUserId,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _FetchPosts value)  fetchPosts,required TResult Function( _FetchPostsByUserId value)  fetchPostsByUserId,}){
 final _that = this;
 switch (_that) {
 case _FetchPosts():
-return fetchPosts(_that);case _FetchPostDetail():
-return fetchPostDetail(_that);case _FetchPostsByUserId():
+return fetchPosts(_that);case _FetchPostsByUserId():
 return fetchPostsByUserId(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -102,12 +100,11 @@ return fetchPostsByUserId(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _FetchPosts value)?  fetchPosts,TResult? Function( _FetchPostDetail value)?  fetchPostDetail,TResult? Function( _FetchPostsByUserId value)?  fetchPostsByUserId,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _FetchPosts value)?  fetchPosts,TResult? Function( _FetchPostsByUserId value)?  fetchPostsByUserId,}){
 final _that = this;
 switch (_that) {
 case _FetchPosts() when fetchPosts != null:
-return fetchPosts(_that);case _FetchPostDetail() when fetchPostDetail != null:
-return fetchPostDetail(_that);case _FetchPostsByUserId() when fetchPostsByUserId != null:
+return fetchPosts(_that);case _FetchPostsByUserId() when fetchPostsByUserId != null:
 return fetchPostsByUserId(_that);case _:
   return null;
 
@@ -125,11 +122,10 @@ return fetchPostsByUserId(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  fetchPosts,TResult Function( int id)?  fetchPostDetail,TResult Function( int userId)?  fetchPostsByUserId,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  fetchPosts,TResult Function( int userId)?  fetchPostsByUserId,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FetchPosts() when fetchPosts != null:
-return fetchPosts();case _FetchPostDetail() when fetchPostDetail != null:
-return fetchPostDetail(_that.id);case _FetchPostsByUserId() when fetchPostsByUserId != null:
+return fetchPosts();case _FetchPostsByUserId() when fetchPostsByUserId != null:
 return fetchPostsByUserId(_that.userId);case _:
   return orElse();
 
@@ -148,11 +144,10 @@ return fetchPostsByUserId(_that.userId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  fetchPosts,required TResult Function( int id)  fetchPostDetail,required TResult Function( int userId)  fetchPostsByUserId,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  fetchPosts,required TResult Function( int userId)  fetchPostsByUserId,}) {final _that = this;
 switch (_that) {
 case _FetchPosts():
-return fetchPosts();case _FetchPostDetail():
-return fetchPostDetail(_that.id);case _FetchPostsByUserId():
+return fetchPosts();case _FetchPostsByUserId():
 return fetchPostsByUserId(_that.userId);case _:
   throw StateError('Unexpected subclass');
 
@@ -170,11 +165,10 @@ return fetchPostsByUserId(_that.userId);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  fetchPosts,TResult? Function( int id)?  fetchPostDetail,TResult? Function( int userId)?  fetchPostsByUserId,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  fetchPosts,TResult? Function( int userId)?  fetchPostsByUserId,}) {final _that = this;
 switch (_that) {
 case _FetchPosts() when fetchPosts != null:
-return fetchPosts();case _FetchPostDetail() when fetchPostDetail != null:
-return fetchPostDetail(_that.id);case _FetchPostsByUserId() when fetchPostsByUserId != null:
+return fetchPosts();case _FetchPostsByUserId() when fetchPostsByUserId != null:
 return fetchPostsByUserId(_that.userId);case _:
   return null;
 
@@ -214,72 +208,6 @@ String toString() {
 
 
 
-
-/// @nodoc
-
-
-class _FetchPostDetail implements PostEvent {
-  const _FetchPostDetail(this.id);
-  
-
- final  int id;
-
-/// Create a copy of PostEvent
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$FetchPostDetailCopyWith<_FetchPostDetail> get copyWith => __$FetchPostDetailCopyWithImpl<_FetchPostDetail>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _FetchPostDetail&&(identical(other.id, id) || other.id == id));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,id);
-
-@override
-String toString() {
-  return 'PostEvent.fetchPostDetail(id: $id)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$FetchPostDetailCopyWith<$Res> implements $PostEventCopyWith<$Res> {
-  factory _$FetchPostDetailCopyWith(_FetchPostDetail value, $Res Function(_FetchPostDetail) _then) = __$FetchPostDetailCopyWithImpl;
-@useResult
-$Res call({
- int id
-});
-
-
-
-
-}
-/// @nodoc
-class __$FetchPostDetailCopyWithImpl<$Res>
-    implements _$FetchPostDetailCopyWith<$Res> {
-  __$FetchPostDetailCopyWithImpl(this._self, this._then);
-
-  final _FetchPostDetail _self;
-  final $Res Function(_FetchPostDetail) _then;
-
-/// Create a copy of PostEvent
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? id = null,}) {
-  return _then(_FetchPostDetail(
-null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,
-  ));
-}
-
-
-}
 
 /// @nodoc
 
