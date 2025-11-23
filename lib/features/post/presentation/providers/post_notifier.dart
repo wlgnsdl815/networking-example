@@ -15,7 +15,10 @@ part 'post_notifier.g.dart';
 class PostNotifier extends _$PostNotifier {
   // build에서 초기 상태 리턴
   @override
-  PostState build() => const PostState.initial();
+  PostState build() {
+    _onFetchPosts();
+    return const PostState.initial();
+  }
 
   GetPosts get _getPosts => ref.read(getPostsProvider);
   GetPostDetail get _getPostDetail => ref.read(getPostDetailProvider);
